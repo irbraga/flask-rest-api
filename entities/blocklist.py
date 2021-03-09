@@ -1,6 +1,6 @@
 import datetime
 from sqlalchemy import Column, String, DateTime, Boolean
-from entities import db
+from plugins.sqlalchemy import db
 
 class TokenBlockList(db.Model):
     __tablename__ = 'tokens_blocklist'

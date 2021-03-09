@@ -1,12 +1,12 @@
 from flask import Flask, Blueprint
 from flask_migrate import Migrate
 from plugins.jwt import jwt_manager
+from plugins.sqlalchemy import db
 from werkzeug.exceptions import BadRequest, Unauthorized, InternalServerError
 from cli import db_cli
 from blueprints.admin import admin_blueprint
 from blueprints.public import public_blueprint
 from blueprints.secured import secured_blueprint
-from entities import db
 from config import ServerConfig
 
 

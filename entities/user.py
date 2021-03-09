@@ -5,7 +5,7 @@ from typing import List
 from sqlalchemy import Column, String, Date, DateTime, Enum
 from werkzeug.exceptions import BadRequest, Unauthorized
 from decorators.type import GUID
-from entities import db
+from plugins.sqlalchemy import db
 from entities.types import RoleType
 
 

@@ -1,6 +1,6 @@
 import datetime
 from flask.cli import AppGroup
-from entities import db
+from plugins.sqlalchemy import db
 from entities.user import User
 from entities.types import RoleType
 
