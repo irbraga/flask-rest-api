@@ -3,4 +3,5 @@ migrations/
 tests_coverage_report/
 venv/
 virtualenv/
+.coverage
 database.db
