@@ -17,7 +17,7 @@ class DefaultConfig:
     JWT_REFRESH_TOKEN_EXPIRES = datetime.timedelta(days=30)
 
     # Flask-SQLAlchemy
-    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
 

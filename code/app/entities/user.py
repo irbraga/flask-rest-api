@@ -1,11 +1,11 @@
 '''
 Module with User database mapping.
 '''
-import base64
 import datetime
 from uuid import uuid4, UUID
 from typing import List
 import dateutil
+from flask_bcrypt import generate_password_hash, check_password_hash
 from sqlalchemy import Column, String, Date, DateTime, Enum
 from app.decorators.type import GUID
 from app.extensions.sqlalchemy import db
@@ -71,16 +71,15 @@ class User(db.Model):
         '''
         Password setter.
         '''
-        self._password = base64.b64encode(value.encode('utf-8'))
+        if value:
+            self._password = generate_password_hash(value).decode('utf-8')
 
     def check_password(self, password: str) -> bool:
         '''
         Return True with the provided password matches with the class password.
         Otherwise, return False.
         '''
-        encoded_password = base64.b64encode(password.encode('utf-8'))
-        if self._password == encoded_password:
-            return True
+        return check_password_hash(self.password, password)
 
     @classmethod
     def find_by_uuid(cls, uuid: str) -> 'User':

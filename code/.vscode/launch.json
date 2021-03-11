@@ -21,6 +21,13 @@
             "jinja": true
         },
         {
+            "name": "Cli Load",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "args": ["database", "load"]
+        },
+        {
             "name": "Pytest",
             "type": "python",
             "request": "launch",

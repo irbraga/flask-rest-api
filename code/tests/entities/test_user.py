@@ -27,8 +27,8 @@ def test_check_password(app, client):
     joe = User.find_by_username('joe.pesci')
 
     assert joe
+    assert joe.password is not 'nickysantoro'
     assert joe.check_password('nickysantoro')
-    assert joe.password == b'bmlja3lzYW50b3Jv'
     assert not joe.check_password('wrong_password')
 
 def test_list_admin_users(app, client):
